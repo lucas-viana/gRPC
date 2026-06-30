@@ -8,8 +8,6 @@ quando dois serviços conversam por um contrato binário sobre HTTP/2: a seriali
 Protocol Buffers, o transporte multiplexado, os quatro modos de streaming e um exemplo
 prático em C#/.NET.
 
-**Autor:** Lucas Viana da Silva — IFSULDEMINAS, Campus Machado.
-
 ---
 
 ## O que tem dentro
