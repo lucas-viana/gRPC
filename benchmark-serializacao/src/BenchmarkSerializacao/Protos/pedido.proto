@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package benchmark.pedido;
+
+option csharp_namespace = "BenchmarkSerializacao.Protobuf";
+
+import "google/protobuf/timestamp.proto";
+
+// Status do pedido. Em proto3 o primeiro valor do enum DEVE ser 0 e representa
+// o default. Prefixamos com o nome do enum para evitar colisao de identificadores
+// no C# gerado (convencao do protobuf).
+enum Status {
+  STATUS_PENDENTE = 0;
+  STATUS_PAGO = 1;
+  STATUS_ENVIADO = 2;
+}
+
+// Item individual dentro de um pedido.
+message ItemPedido {
+  string produto_id = 1;
+  int32 quantidade = 2;
+  double preco_unitario = 3;
+}
+
+// Objeto de dominio serializado no experimento. Equivalente 1:1 ao POCO
+// PedidoJson usado no caminho System.Text.Json.
+message PedidoRequest {
+  string pedido_id = 1;
+  string cliente_id = 2;
+  google.protobuf.Timestamp criado_em = 3;
+  repeated ItemPedido itens = 4;
+  Status status = 5;
+}

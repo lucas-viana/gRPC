@@ -1,0 +1,11 @@
+# .NET build output
+bin/
+obj/
+
+# Python
+__pycache__/
+*.pyc
+
+# Os CSVs e graficos sao gerados; descomente para nao versiona-los.
+# resultados/*.csv
+# graficos/*.png
